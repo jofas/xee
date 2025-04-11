@@ -12,7 +12,6 @@ use xee_xpath::{DocumentHandle, Documents, Itemable, Query};
 use crate::{
     error::{render_error, render_parse_error},
     repl_cmd::{ArgumentDefinition, CommandDefinition, CommandDefinitions},
-    VERSION,
 };
 
 #[derive(Debug, Parser)]
@@ -200,7 +199,7 @@ impl Repl {
             ),
         ]);
 
-        println!("Xee XPath REPL {}", VERSION);
+        println!("Xee XPath REPL {}", clap::crate_version!());
         println!("Type !help for more information.");
         let mut rl = rustyline::DefaultEditor::new()?;
         loop {
